@@ -1,8 +1,8 @@
 //Global Selectors
-const form = document.querySelector("addTaskForm");
-const input = document.getElementById("#txtTaskName");
-const btnDeleteAll = document.querySelector("btnDeleteAll");
-const taskList =document.getElementById("#task-list");
+const form = document.querySelector("#addTaskForm");
+const input = document.getElementById("txtTaskName");
+const btnDeleteAll = document.querySelector("#btnDeleteAll");
+const taskList =document.getElementById("task-list");
 let items;
 
 //EventListeners
