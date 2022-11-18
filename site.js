@@ -3,18 +3,79 @@ const form = document.querySelector("#addTaskForm");
 const input = document.getElementById("txtTaskName");
 const btnDeleteAll = document.querySelector("#btnDeleteAll");
 const taskList =document.getElementById("task-list");
+const replaceAnListItem = document.getElementById("task-list");
+
+const replaceItem = document.getElementById("task-list");
+
+
+
 let items;
+
 
 //EventListeners
 
 eventListeners();
 
 function eventListeners(){
-    // form submit event
+    
+    
+    //delete all item
+    btnDeleteAll.addEventListener("click",deleteAllItem);
 
+
+     // form submit event
     form.addEventListener("submit",addNewItem);
 
+    //delete an item
+    taskList.addEventListener('click',deleteAnItem);
+    
+    //replace
+    replaceItem.addEventListener('dblclick',replace);
+
+
+
+    
+    
+    
+
+    
+
+
 }
+function replace(e){
+     e.target.innerHTML=input.value;
+
+    
+
+     
+     
+
+}
+
+
+
+function deleteAnItem(e){
+    if(e.target.className==="bi bi-x-circle"){
+        if(confirm('Are you sure?')){
+            e.target.parentElement.parentElement.remove();
+        
+        }
+    
+    }
+
+
+}
+
+ function deleteAllItem(e){
+    if(confirm('Are you sure?')){
+        taskList.innerHTML ='';
+    }
+   
+
+
+    e.preventDefault();
+}
+
 function addNewItem(e){
     e.preventDefault();
 
@@ -31,8 +92,14 @@ function addNewItem(e){
     a.setAttribute('href','#');
     a.innerHTML= '<i class="bi bi-x-circle"></i>'
 
+   
+    
+    
+
     li.appendChild(a);
     taskList.appendChild(li);
+
+    
 
 
 
