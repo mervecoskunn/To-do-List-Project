@@ -33,17 +33,16 @@ function eventListeners(){
     replaceItem.addEventListener('dblclick',replace);
 
 
-
-    
-    
-    
-
-    
-
-
 }
 function replace(e){
-     e.target.innerHTML=input.value;
+     e.target.innerText=input.value;
+     const a= document.createElement('a');
+     a.classList ='delete-item float-end'
+     a.setAttribute('href','#');
+     a.innerHTML= '<i class="bi bi-x-circle"></i>'
+
+     e.target.appendChild(a);
+ 
 
     
 
